@@ -1,14 +1,21 @@
 all: run
 
 clean:
-	rm -rf .venv
+	rm -rf .venv build
 
 venv:
 	python3 -m venv .venv
 	./.venv/bin/pip install -r requirements.txt
 
 run: venv
-	./.venv/bin/python src/main.py
+	./.venv/bin/python src/main.py $(ARGS)
 
 test: venv
 	./.venv/bin/python -m unittest discover -s tests
+
+train: venv
+	mkdir -p build
+	./.venv/bin/python src/train.py
+
+demo: venv
+	./.venv/bin/python src/demo.py

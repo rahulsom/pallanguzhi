@@ -2,9 +2,10 @@ from player import Player
 
 
 class HumanPlayer(Player):
-  def play(self, board):
+  def play(self, board) -> None:
     choices = board.choices()
     print("Valid choices:", choices)
+    board.render(force=True)
     choice = None
     while choice not in choices:
       try:
@@ -13,6 +14,5 @@ class HumanPlayer(Player):
           print("Invalid choice. Please choose from the valid choices.")
       except ValueError:
         print("Invalid input. Please enter a number.")
-    print(f"Human player chose pit {choice}")
 
-    board.play(choice)
+    board.play(choice, "Human")
