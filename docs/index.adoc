@@ -1,0 +1,10 @@
+= Pallanguzhi
+
+Pallanguzhi is a traditional mancala game played in South India.
+
+== Playing
+
+[source,shell]
+----
+curl -o https://rahulsom.github.io/pallanguzhi/pallanguzhi.zip
+----
