@@ -19,3 +19,8 @@ train: venv
 
 demo: venv
 	./.venv/bin/python src/demo.py
+
+package:
+	rm -rf site
+	mkdir -p site
+	tar czvf site/pallanguzhi.tar.gz src/* build/*.pth Makefile requirements.txt
