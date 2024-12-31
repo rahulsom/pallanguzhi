@@ -11,7 +11,7 @@ run: venv
 	./.venv/bin/python src/main.py $(ARGS)
 
 test: venv
-	./.venv/bin/python -m unittest discover -s tests
+	./.venv/bin/python -m unittest discover -s src -p "test_*.py"
 
 train: venv
 	mkdir -p build

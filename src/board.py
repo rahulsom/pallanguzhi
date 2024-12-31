@@ -3,7 +3,7 @@ import re
 
 from texttable import Texttable
 
-from src.constants import *
+from constants import *
 
 
 def rstr(s: int) -> str:
