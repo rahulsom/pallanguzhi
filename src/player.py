@@ -4,11 +4,11 @@ from board import Board
 
 class Player(ABC):
 
-  def __init__(self, player_number):
+  def __init__(self):
     super().__init__()
-    self.player_number = player_number
 
 
   @abstractmethod
-  def play(self, board: Board):
-    pass
+  def play(self, board: Board) -> None:
+    raise NotImplementedError
+
