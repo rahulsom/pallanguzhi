@@ -28,7 +28,7 @@ jobs:
         docker run \
             -u $(id -u):$(id -g) \
             -v $PWD:/documents/ \
-            asciidoctor/docker-asciidoctor \
+            asciidoctor/docker-asciidoctor:1.80 \
             asciidoctor \
                 -D docs \
                 --backend=html5 \
