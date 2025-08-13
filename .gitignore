@@ -3,3 +3,4 @@
 /build
 /site
 __pycache__/
+*.egg-info

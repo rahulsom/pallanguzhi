@@ -9,23 +9,26 @@ See the [GH pages](https://rahulsom.github.io/pallanguzhi/) for more details.
 
 ## Developer Notes
 
+You need [uv](https://docs.astral.sh/uv/getting-started/installation/) installed.
+
 To train the AI
 
 ```shell
-make train
+mkdir -p build
+uv run src/train.py
 ```
 
 To play the game, run this. It assumes player 1 is an AI and player 2 is a human.
 
 ```shell
-make run
+uv run src/main.py
 ```
 
 To adjust the players, you can change the `player1` and `player2`.
 E.g.
 
 ```shell
-ARGS="--player1 human --player2 ai:64" make run
+uv run src/main.py -- --player1 human --player2 ai:64
 ```
 
 The full list of choices for players are:
@@ -35,3 +38,16 @@ The full list of choices for players are:
 - `random`
 - `first`
 - `emptiest`
+
+
+To run the tests
+
+```shell
+uv run -m unittest discover -s src -p "test_*.py"
+```
+
+To run a demo
+
+```shell
+uv run src/demo.py
+```
