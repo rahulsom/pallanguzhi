@@ -40,7 +40,7 @@ Then you can run it
 
 [source,shell]
 ----
-make run
+uv run src/main.py
 ----
 
 == Building

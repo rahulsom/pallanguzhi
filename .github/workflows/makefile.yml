@@ -17,14 +17,21 @@ jobs:
     - name: Install uv
       uses: astral-sh/setup-uv@v6
 
+    - name: Install dependencies
+      run: uv sync
+
     - name: Run tests
-      run: make test
+      run: uv run -m unittest discover -s src -p "test_*.py"
 
     - name: Train AI
-      run: make train
+      run: |-
+        mkdir -p build
+        uv run src/train.py
 
     - name: Package
-      run: make package
+      run: |-
+        mkdir -p site
+        tar czvf site/pallanguzhi.tar.gz src/* build/*.pth pyproject.toml uv.lock
 
     - name: Create docsite
       run: >-
