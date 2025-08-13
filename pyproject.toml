@@ -1,0 +1,8 @@
+[project]
+name = "pallanguzhi"
+version = "0.1.0"
+dependencies = [
+    "numpy==2.3.2",
+    "texttable==1.7.0",
+    "torch==2.8.0",
+]
