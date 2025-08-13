@@ -4,23 +4,22 @@ clean:
 	rm -rf .venv build
 
 venv:
-	python3 -m venv .venv
-	./.venv/bin/pip install -r requirements.txt
+	uv sync
 
 run: venv
-	./.venv/bin/python src/main.py $(ARGS)
+	uv run src/main.py $(ARGS)
 
 test: venv
-	./.venv/bin/python -m unittest discover -s src -p "test_*.py"
+	uv run -m unittest discover -s src -p "test_*.py"
 
 train: venv
 	mkdir -p build
-	./.venv/bin/python src/train.py
+	uv run src/train.py
 
 demo: venv
-	./.venv/bin/python src/demo.py
+	uv run src/demo.py
 
 package:
 	rm -rf site
 	mkdir -p site
-	tar czvf site/pallanguzhi.tar.gz src/* build/*.pth Makefile requirements.txt
+	tar czvf site/pallanguzhi.tar.gz src/* build/*.pth Makefile pyproject.toml uv.lock
