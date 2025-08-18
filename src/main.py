@@ -3,7 +3,7 @@ import argparse
 from ai_player import AIPlayer
 from board import Board
 from human_player import HumanPlayer
-from simple_players import *
+from simple_players import Player, RandomPlayer, FirstPitPlayer, EmptiestPitPlayer
 from game import play_game
 
 

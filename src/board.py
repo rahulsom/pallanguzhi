@@ -3,7 +3,7 @@ import re
 
 from texttable import Texttable
 
-from constants import *
+from constants import CUPS_PER_USER, TOKENS_PER_CUP, MAX_MOVES_PER_TURN, MAX_MOVES_PENALTY, QUICK_DRAW_COUNT
 
 
 def rstr(s: int) -> str:
