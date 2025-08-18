@@ -33,17 +33,11 @@ jobs:
         mkdir -p site
         tar czvf site/pallanguzhi.tar.gz src/* build/*.pth pyproject.toml uv.lock
 
-    - name: Create docsite
-      run: >-
-        docker run \
-            -u $(id -u):$(id -g) \
-            -v $PWD:/documents/ \
-            asciidoctor/docker-asciidoctor:1.80 \
-            asciidoctor \
-                -D docs \
-                --backend=html5 \
-                -o /documents/site/index.html \
-                /documents/docs/index.adoc
+    - name: Get build container
+      id: adocbuild
+      uses: tonynv/asciidoctor-action@master
+      with:
+          program: "asciidoctor --backend=html5 -o site/index.html docs/index.adoc"
 
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v4
