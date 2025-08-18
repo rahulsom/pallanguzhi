@@ -43,7 +43,7 @@ The full list of choices for players are:
 To run the tests
 
 ```shell
-uv run -m unittest discover -s src -p "test_*.py"
+uv run pytest -v
 ```
 
 To run a demo

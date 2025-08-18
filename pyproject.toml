@@ -1,13 +1,18 @@
 [project]
 name = "pallanguzhi"
 version = "0.1.0"
+requires-python = ">=3.11"
 dependencies = [
     "numpy==2.3.2",
     "texttable==1.7.0",
     "torch==2.8.0",
 ]
 
-[dependency-groups]
-dev = [
+[tool.uv]
+dev-dependencies = [
     "ruff>=0.12.8",
+    "pytest",
 ]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
