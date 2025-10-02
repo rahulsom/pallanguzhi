@@ -10,7 +10,7 @@ dependencies = [
 
 [tool.uv]
 dev-dependencies = [
-    "ruff==0.13.2",
+    "ruff==0.13.3",
     "pytest==8.4.2",
 ]
 
