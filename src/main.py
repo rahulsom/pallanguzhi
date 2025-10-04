@@ -32,6 +32,7 @@ def build_player(player_type: str) -> Player:
     return HumanPlayer()
   if player_type.startswith("ai:"):
     return AIPlayer(int(player_type[3:]))
+  raise ValueError(f"Unsupported player_type '{player_type}'. Valid choices are: ['random', 'ai:64', 'human', 'first', 'emptiest']")
 
 
 if __name__ == '__main__':
