@@ -28,13 +28,13 @@ To adjust the players, you can change the `player1` and `player2`.
 E.g.
 
 ```shell
-uv run src/main.py -- --player1 human --player2 ai:64
+uv run src/main.py -- --player1 human --player2 ai:128
 ```
 
 The full list of choices for players are:
 
 - `human`
-- `ai:64`
+- `ai:128`
 - `random`
 - `first`
 - `emptiest`

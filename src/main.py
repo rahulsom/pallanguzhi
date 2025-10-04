@@ -11,12 +11,12 @@ def build_parser():
   parser = argparse.ArgumentParser(prog='pallanguzhi', description='Game Engine for Pallanguzhi')
   choices = [
     "random",
-    "ai:64",
+    "ai:128",
     "human",
     "first",
     "emptiest"
   ]
-  parser.add_argument('--player1', type=str, default='ai:64', help='Player 1 type', choices=choices)
+  parser.add_argument('--player1', type=str, default='ai:128', help='Player 1 type', choices=choices)
   parser.add_argument('--player2', type=str, default='human', help='Player 2 type', choices=choices)
   return parser
 

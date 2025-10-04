@@ -26,7 +26,7 @@ def train(p1: AIPlayer) -> None:
 
 
 if __name__ == '__main__':
-  all_players = [AIPlayer(64)]
+  all_players = [AIPlayer(128)]
 
   for p1 in all_players:
     train(p1)
