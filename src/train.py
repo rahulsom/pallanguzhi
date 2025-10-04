@@ -8,21 +8,21 @@ from game import play_game
 from simple_players import RandomPlayer
 
 
-def train(p1: AIPlayer) -> None:
+def train(p: AIPlayer) -> None:
   for i in range(25):
     board = Board(verbose=False)
     start_time = time.time()
-    play_game(board, p1, p1, prefix=f"[{p1}]  Game {3 * i + 1:2d}")
+    play_game(board, p, p, prefix=f"[{p}]  Game {3 * i + 1:2d}")
     print("--- %s seconds ---" % (time.time() - start_time))
     start_time = time.time()
-    play_game(board, RandomPlayer(), p1, prefix=f"[{p1}]  Game {3 * i + 2:2d}")
+    play_game(board, RandomPlayer(), p, prefix=f"[{p}]  Game {3 * i + 2:2d}")
     print("--- %s seconds ---" % (time.time() - start_time))
     start_time = time.time()
-    play_game(board, p1, RandomPlayer(), prefix=f"[{p1}]  Game {3 * i + 3:2d}")
+    play_game(board, p, RandomPlayer(), prefix=f"[{p}]  Game {3 * i + 3:2d}")
     print("--- %s seconds ---" % (time.time() - start_time))
 
-  torch.save(p1.model.state_dict(), f"build/model.{p1.depth}.pth")
-  torch.save(p1.target_model.state_dict(), f"build/target_model.{p1.depth}.pth")
+  torch.save(p.model.state_dict(), f"build/model.{p.depth}.pth")
+  torch.save(p.target_model.state_dict(), f"build/target_model.{p.depth}.pth")
 
 
 if __name__ == '__main__':
