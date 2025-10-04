@@ -8,8 +8,8 @@ dependencies = [
     "torch==2.8.0",
 ]
 
-[tool.uv]
-dev-dependencies = [
+[dependency-groups]
+dev = [
     "ruff==0.13.3",
     "pytest==8.4.2",
 ]
