@@ -1,4 +1,6 @@
 name: UV CI
+permissions:
+  contents: write
 
 on:
   push:
