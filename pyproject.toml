@@ -1,7 +1,7 @@
 [project]
 name = "pallanguzhi"
 version = "0.1.0"
-requires-python = "==3.14.0"
+requires-python = "==3.14.1"
 dependencies = [
     "numpy==2.3.5",
     "texttable==1.7.0",
