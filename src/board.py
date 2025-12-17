@@ -77,7 +77,7 @@ class Board:
     else:
       raise ValueError("There are still valid choices for the current player")
 
-  def render(self, old: list[int] = None, from_cup: int = None, force: bool = False) -> None:
+  def render(self, old: list[int] | None = None, from_cup: int | None = None, force: bool = False) -> None:
     if old is None:
       old = self.tokens_by_cup
     if self.visualize or force:
