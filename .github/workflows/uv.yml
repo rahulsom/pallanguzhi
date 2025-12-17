@@ -25,6 +25,12 @@ jobs:
     - name: Run tests
       run: uv run pytest -v
 
+    - name: Install ty
+      run: uv tool install ty@latest
+
+    - name: Run type checks
+      run: uv tool run ty check
+
     - name: Train AI
       run: |-
         mkdir -p build
