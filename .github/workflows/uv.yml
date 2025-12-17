@@ -31,6 +31,9 @@ jobs:
     - name: Run type checks
       run: uv tool run ty check
 
+    - name: Lint Code
+      run: uvx ruff check
+
     - name: Train AI
       run: |-
         mkdir -p build
