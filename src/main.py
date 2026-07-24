@@ -2,9 +2,9 @@ import argparse
 
 from ai_player import AIPlayer
 from board import Board
-from human_player import HumanPlayer
-from simple_players import Player, RandomPlayer, FirstPitPlayer, EmptiestPitPlayer
 from game import play_game
+from human_player import HumanPlayer
+from simple_players import EmptiestPitPlayer, FirstPitPlayer, Player, RandomPlayer
 
 
 def build_parser():
