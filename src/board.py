@@ -3,7 +3,13 @@ import re
 
 from texttable import Texttable
 
-from constants import CUPS_PER_USER, TOKENS_PER_CUP, MAX_MOVES_PER_TURN, MAX_MOVES_PENALTY, QUICK_DRAW_COUNT
+from constants import (
+  CUPS_PER_USER,
+  MAX_MOVES_PENALTY,
+  MAX_MOVES_PER_TURN,
+  QUICK_DRAW_COUNT,
+  TOKENS_PER_CUP,
+)
 
 
 def rstr(s: int) -> str:
@@ -180,7 +186,7 @@ class Board:
   def clear(self) -> None:
     if self.verbose:
       print(f"{self.to_string()}.clear()\n")
-    for i in range(0, CUPS_PER_USER):
+    for i in range(CUPS_PER_USER):
       if self.tokens_by_cup[i] > 0:
         self.taken_tokens[0] += self.tokens_by_cup[i]
         self.tokens_by_cup[i] = 0
@@ -192,7 +198,7 @@ class Board:
   def prep(self) -> None:
     if self.verbose:
       print(self.to_string(), end="")
-    for i in range(0, CUPS_PER_USER):
+    for i in range(CUPS_PER_USER):
       if self.taken_tokens[0] >= TOKENS_PER_CUP:
         self.tokens_by_cup[i] = TOKENS_PER_CUP
         self.taken_tokens[0] -= TOKENS_PER_CUP

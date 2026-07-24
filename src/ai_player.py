@@ -1,10 +1,9 @@
 import os
-
-import torch
-import torch.nn as nn
-import torch.optim as optim
 import random
 from collections import deque
+
+import torch
+from torch import nn, optim
 
 from constants import CUPS_PER_USER
 from player import Player
@@ -18,7 +17,7 @@ device = torch.device(
 
 class DQN(nn.Module):
   def __init__(self, state_size, action_size):
-    super(DQN, self).__init__()
+    super().__init__()
     self.dqn = nn.Sequential(
       nn.Linear(state_size, CUPS_PER_USER * 2),
       nn.ReLU(),
