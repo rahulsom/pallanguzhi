@@ -26,7 +26,7 @@ class DQN(nn.Module):
       nn.Linear(CUPS_PER_USER * 2, action_size)
     ).to(device)
 
-  def forward(self, x):
+  def forward(self, x: torch.Tensor) -> torch.Tensor:  # ty: ignore[invalid-mutable-override]
     return self.dqn(x)
 
 
