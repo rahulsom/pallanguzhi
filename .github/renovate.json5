@@ -3,5 +3,13 @@
   "automerge": true,
   "extends": [
     "config:recommended"
+  ],
+  "packageRules": [
+    {
+      "matchPackageNames": ["python"],
+      "matchDepTypes": ["requires-python"],
+      "minimumReleaseAge": "5 days"
+    }
   ]
 }
+
